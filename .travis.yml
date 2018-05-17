@@ -1,8 +1,10 @@
 language: python
 sudo: false
-python:
-  - "2.6"
 install:
   pip install tox
+matrix:
+  include:
+    - python: "3.6"
+      env: TOX_ENX=py36
 script:
-  tox
+  tox -e $TOX_ENX
