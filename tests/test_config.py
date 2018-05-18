@@ -2,9 +2,9 @@ import attr
 
 from json import dumps
 
-import configtools as ct
+from configtools.config import load
 
-config = ct.load({'some': {'key': 'value'}})
+config = load({'some': {'key': 'value'}})
 
 
 def test_func():

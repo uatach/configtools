@@ -40,6 +40,6 @@ setup(
 
     project_urls={
         'Bug Reports': f'https://github.com/uatach/{project_name}/issues',
-        'Source': 'https://github.com/uatach/{project_name}/',
+        'Source': f'https://github.com/uatach/{project_name}/',
     },
 )
