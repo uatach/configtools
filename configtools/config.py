@@ -42,6 +42,5 @@ class Config(object):
         for k in spec.args:
             if k in config:
                 params[k] = config[k]
-            elif k != 'self':
-                raise Exception(k)
+
         return partial(func, **params)

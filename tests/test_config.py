@@ -14,7 +14,7 @@ def test_func():
     assert func() == config.inject(func)()
 
 
-def test_func_with_param():
+def test_func_param():
     @config.inject
     def func(some):
         return dumps(some)
@@ -22,12 +22,20 @@ def test_func_with_param():
     assert func() == '{"key": "value"}'
 
 
-def test_func_with_prefix():
+def test_func_prefix():
     @config.inject(prefix='some')
     def func(key):
         return dumps(key)
 
     assert func() == '"value"'
+
+
+def test_func_param_unknown():
+    @config.inject
+    def func(other):
+        return other
+
+    assert func('test') == 'test'
 
 
 def test_class():
